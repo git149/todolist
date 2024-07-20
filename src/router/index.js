@@ -1,30 +1,58 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import Vue from 'vue';
+import Router from 'vue-router';
+import Login from '@/components/Login.vue';
+import Register from '@/components/Register.vue';
+import Home from '@/components/Home.vue';
+import ModuleOne from '@/components/ModuleOne.vue';
+import ModuleTwo from '@/components/ModuleTwo.vue';
+import ModuleThree from '@/components/ModuleThree.vue';
+import GroupTodoList from '@/components/GroupTodoList.vue';
+import TodoList from '@/components/TodoList.vue';
 
-Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: "/",
-    name: "home",
-    component: HomeView,
-  },
-  {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
-  },
-];
+Vue.use(Router);
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes,
+export default new Router({
+  routes: [
+    {
+      path: '/Login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/Register',
+      name: 'Register',
+      component: Register
+    },
+    {
+      path: '/Home',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/module-one',
+      name: 'ModuleOne',
+      component: ModuleOne
+    },
+    {
+      path: '/module-two',
+      name: 'ModuleTwo',
+      component: ModuleTwo
+    },
+    {
+      path: '/module-three',
+      name: 'ModuleThree',
+      component: ModuleThree
+    },
+    {
+      path: '/TodoList',
+      name: 'TodoList',
+      component: TodoList
+    },
+    {
+      path: '/GroupTodoList',
+      name: 'GroupTodoList',
+      component: GroupTodoList
+    }
+  ]
 });
-
-export default router;

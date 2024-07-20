@@ -1,13 +1,28 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
     <router-view />
   </div>
 </template>
 
+import register from './components/Register'
+import login from './components/Login'
+import home from './components/Home'
+import todolist from './components/TodoList'
+import GroupTodoList from './components/GroupTodoList'
+import ModuleThree from './components/ModuleThree.vue'
+
+export default {
+  name: 'App',
+  components: {
+ login,
+ register,
+ home,
+ todolist,
+ GroupTodoList,
+ ModuleThree
+  },
+
+};
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
